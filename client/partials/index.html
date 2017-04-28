@@ -1,8 +1,24 @@
 <div ng-controller="UsersController as UC">
 	<div>
+
 		<h1>Welcome {{UC.current_user.name}}</h1>
 	</div>
-
-	<a href="#!/">logout</a>
 	<button ng-click="UC.logout()">LOGOUT</button>
+	<div>
+		<br>
+		<hr>
+		<h2>Add a post!</h2>
+		<form ng-submit="UC.createPost(UC.newPost)">
+			<div>
+			<label>Title</label>
+			<input ng-model="UC.newPost.title">
+			</div>
+			<br>
+			<div>
+				<label>Post</label>
+				<textarea rows="3" cols="50" ng-model="UC.newPost.post"></textarea>
+			</div>
+			<input type="submit" value="Add Post">
+		</form>
+	</div>
 </div>

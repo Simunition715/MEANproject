@@ -3,7 +3,7 @@ var fs = require('fs');
 var model_path = __dirname + '/../models';
 console.log('connecting to db...');
 
-mongoose.connect('mongodb://localhost/personal2');
+mongoose.connect('mongodb://localhost/grapefruit');
 
 mongoose.Promise = global.Promise;
 

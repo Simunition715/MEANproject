@@ -19,7 +19,14 @@ app.controller('UsersController',function(UserFactory,$location,$routeParams){
 		}
 	})
 
-
+	self.createPost = function(newPost){
+		newPost.author = UserFactory.current_user.name;
+		console.log("maybe....")
+		UserFactory.createPost(newPost, function(res){
+			self.newPost = {};
+			$location.url('/dashboard')
+		})
+	}
 	self.logout = function(){
 		console.log('ok');
 		UserFactory.session = {}

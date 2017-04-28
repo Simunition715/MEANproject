@@ -26,6 +26,12 @@ app.factory('UserFactory', function($http){
 		})
 	}
 
+	factory.createPost = function(newPost, callback){
+		console.log("factory")
+		$http.post("/posts", newPost).then(function(callback){
+			console.log('Routing...');
+		})
+	}
 
 	factory.login = function(loginUser, callback){
 		$http.post("/session", loginUser).then(function(res){
