@@ -1,15 +1,15 @@
-var mongoos = require('mongoose');
+var mongoose = require('mongoose');
 var fs = require('fs');
-var models_path = __dirname + '/../models';
+var model_path = __dirname + '/../models';
 console.log('connecting to db...');
 
-mongoose.connect('mongodb://localhost/personal');
+mongoose.connect('mongodb://localhost/personal2');
 
 mongoose.Promise = global.Promise;
 
 fs.readdirSync(model_path).forEach(function(file){
 	if(file.indexOf('.js')!= -1){
 		console.log('loading ' + file + '...');
-		require(models_path + '/' + file)
+		require(model_path + '/' + file)
 	}
 })

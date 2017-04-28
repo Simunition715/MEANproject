@@ -8,7 +8,7 @@ app.use(express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/client'));
 app.use(session({
 	secret: 'newsecret',
-	resave: flse,
+	resave: false,
 	saveUninitialized: true,
 	rolling: true
 }))

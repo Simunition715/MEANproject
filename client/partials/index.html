@@ -1,0 +1,8 @@
+<div ng-controller="UsersController as UC">
+	<div>
+		<h1>Welcome {{UC.current_user.name}}</h1>
+	</div>
+
+	<a href="#!/">logout</a>
+	<button ng-click="UC.logout()">LOGOUT</button>
+</div>
