@@ -23,8 +23,10 @@ app.controller('UsersController',function(UserFactory,$location,$routeParams){
 		newPost.author = UserFactory.current_user.name;
 		console.log("maybe....")
 		UserFactory.createPost(newPost, function(res){
+			console.log(res);
+			console.log('i am about to clear self.newPost');
 			self.newPost = {};
-			$location.url('/dashboard')
+			$location.url('/dashboard');
 		})
 	}
 	self.logout = function(){

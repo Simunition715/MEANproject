@@ -9,16 +9,16 @@ module.exports = {
 	create: function(req,res){
 		console.log('hitting');
 		var post = new Post(req.body);
-		console.log(post);
-			post.save(function(err, doc){
-				console.log('save');
-				if(err){
-					return res.json(err)
-					console.log(err);
-				}
-				return res.json(doc)
-				console.log(doc);
-			})
+		post.save(function(err, doc){
+			console.log('save');
+			if(err){
+				console.log("ok....");
+			return res.json(err)
+			}
+			console.log(doc);
+			return res.json(doc)
+			
+		})
 	},
 
 }

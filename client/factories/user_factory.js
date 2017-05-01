@@ -28,8 +28,8 @@ app.factory('UserFactory', function($http){
 
 	factory.createPost = function(newPost, callback){
 		console.log("factory")
-		$http.post("/posts", newPost).then(function(callback){
-			console.log('Routing...');
+		$http.post("/posts", newPost).then(function(res){
+			callback(res);
 		})
 	}
 
